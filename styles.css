@@ -150,3 +150,17 @@ main { max-width: 1120px; margin: 0 auto; padding: 0 var(--gutter); }
 .about__inspo a:hover { color: var(--blue); }
 
 .hero__actions .btn:nth-child(2):last-child { grid-column: 1 / -1; }
+
+/* Passcode gate */
+.gate { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 16px; background: rgba(238, 240, 248, 0.6); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); }
+html:not(.unlocked) body { overflow: hidden; }
+html:not(.unlocked) main, html:not(.unlocked) .footer { visibility: hidden; }
+html.unlocked .gate { display: none; }
+.gate__card { width: min(380px, 100%); padding: 32px 28px; border-radius: 20px; display: grid; gap: 14px; text-align: center; }
+.gate__card h2 { font-size: 24px; font-weight: 800; letter-spacing: -0.03em; }
+.gate__hint { font-size: 14.5px; color: var(--muted); margin-top: -6px; }
+.gate__card .kicker { justify-content: center; }
+.gate__card input { width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid rgba(35, 39, 53, 0.15); background: rgba(255, 255, 255, 0.9); font: inherit; font-size: 18px; letter-spacing: 0.3em; text-align: center; color: var(--ink); }
+.gate__card input:focus { outline: 2px solid var(--blue); outline-offset: 1px; }
+.gate__card .btn--primary { grid-column: auto; width: 100%; }
+.gate__error { font-size: 14px; color: #b42318; }
